@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = ({ strapi }) => ({
-  async refreshcache(ctx) {
+  async refresh(ctx) {
     const response = await strapi
       .plugin("stellate")
       .service("cacheService")
@@ -14,7 +14,7 @@ module.exports = ({ strapi }) => ({
     ctx.body = response;
   },
 
-  async refreshcollectioncache(ctx) {
+  async refreshcollection(ctx) {
     const response = await strapi
       .plugin("stellate")
       .service("cacheService")

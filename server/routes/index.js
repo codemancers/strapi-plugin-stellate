@@ -2,15 +2,15 @@ module.exports = [
   {
     method: "POST",
     path: "/cache/refresh",
-    handler: "cacheController.refreshcache",
+    handler: "cacheController.refresh",
     config: {
       policies: [],
     },
   },
   {
     method: "POST",
-    path: "/cache/refreshcollectioncache",
-    handler: "cacheController.refreshcollectioncache",
+    path: "/cache/refreshcollection",
+    handler: "cacheController.refreshcollection",
     config: {
       policies: [],
     },

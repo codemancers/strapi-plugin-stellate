@@ -30,10 +30,7 @@ export const ClearCache = () => {
     }
   };
 
-  const handleAlertClose = () => {
-    setShowAlert(false);
-  };
-
+  const handleAlertClose = () => setShowAlert(false);
   const handleClear = () => setCollection("");
 
   return (
@@ -66,7 +63,7 @@ export const ClearCache = () => {
               shadow="tableShadow"
             >
               <Button fullWidth loading={loading} onClick={handleClick}>
-                {collection || "purge all cache"}
+                {collection || "Purge all cache"}
               </Button>
             </Box>
           )}

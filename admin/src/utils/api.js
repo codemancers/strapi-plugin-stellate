@@ -26,11 +26,10 @@ export const refreshAllCache = async () => {
 
 export const refreshCollectionCache = async (query) => {
   try {
-    const payload = query;
     const response = await axios({
-      url: `stellate/cache/refreshcollectioncache`,
+      url: "stellate/cache/refreshcollection",
       method: "POST",
-      data: payload,
+      data: query,
     });
 
     return response;
