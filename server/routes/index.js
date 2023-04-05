@@ -1,7 +1,7 @@
 module.exports = [
   {
     method: "POST",
-    path: "/cache/refreshcache",
+    path: "/cache/refresh",
     handler: "cacheController.refreshcache",
     config: {
       policies: [],

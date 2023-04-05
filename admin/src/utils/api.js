@@ -13,12 +13,12 @@ export const refreshCache = async (type) => {
 
 export const refreshAllCache = async () => {
   try {
-    const data = await axios({
-      url: "stellate/cache/refreshcache",
+    const response = await axios({
+      url: "stellate/cache/refresh",
       method: "POST",
     });
 
-    return data;
+    return response;
   } catch (error) {
     console.error(error);
   }
@@ -26,12 +26,14 @@ export const refreshAllCache = async () => {
 
 export const refreshCollectionCache = async (query) => {
   try {
-    const data = await axios({
-      url: `stellate/cache/refreshcollectioncache?collection=${query}`,
+    const payload = query;
+    const response = await axios({
+      url: `stellate/cache/refreshcollectioncache`,
       method: "POST",
+      data: payload,
     });
 
-    return data;
+    return response;
   } catch (error) {
     console.error(error);
   }
