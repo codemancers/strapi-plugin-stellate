@@ -29,7 +29,22 @@ export const refreshCollectionCache = async (query) => {
     const response = await axios({
       url: "stellate/cache/refreshcollection",
       method: "POST",
-      data: query,
+      data: {
+        collection: query,
+      },
+    });
+
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getCollectionTypes = async () => {
+  try {
+    const response = await axios({
+      url: "stellate/collections",
+      method: "GET",
     });
 
     return response;

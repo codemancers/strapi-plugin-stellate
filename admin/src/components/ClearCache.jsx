@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box } from "@strapi/design-system/Box";
 import { Button } from "@strapi/design-system/Button";
 import { Stack } from "@strapi/design-system/Stack";
 import { Select, Option } from "@strapi/design-system/Select";
-import { refreshCache } from "../utils/api";
+import { getCollectionTypes, refreshCache } from "../utils/api";
 
-import { options } from "../utils/options";
+// import { options } from "../utils/options";
 import { Alert } from "./Alert";
 
 export const ClearCache = () => {
@@ -13,6 +13,7 @@ export const ClearCache = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [variant, setVariant] = useState("success");
   const [collection, setCollection] = useState("");
+  const [options, setoptions] = useState([]);
   const [error, toggleError] = useState(null);
 
   const handleClick = async () => {
@@ -29,6 +30,10 @@ export const ClearCache = () => {
       setVariant("danger");
     }
   };
+  useEffect(async () => {
+    const response = await getCollectionTypes();
+    setoptions(response.data);
+  }, []);
 
   const handleAlertClose = () => setShowAlert(false);
   const handleClear = () => setCollection("");

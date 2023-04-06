@@ -15,4 +15,12 @@ module.exports = [
       policies: [],
     },
   },
+  {
+    method: "GET",
+    path: "/collections",
+    handler: "collectionController.getCollectionTypes",
+    config: {
+      policies: [],
+    },
+  },
 ];
