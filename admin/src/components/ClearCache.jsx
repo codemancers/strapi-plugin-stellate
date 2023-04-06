@@ -4,8 +4,6 @@ import { Button } from "@strapi/design-system/Button";
 import { Stack } from "@strapi/design-system/Stack";
 import { Select, Option } from "@strapi/design-system/Select";
 import { getCollectionTypes, refreshCache } from "../utils/api";
-
-// import { options } from "../utils/options";
 import { Alert } from "./Alert";
 
 export const ClearCache = () => {
@@ -13,7 +11,7 @@ export const ClearCache = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [variant, setVariant] = useState("success");
   const [collection, setCollection] = useState("");
-  const [options, setoptions] = useState([]);
+  const [options, setOptions] = useState([]);
   const [error, toggleError] = useState(null);
 
   const handleClick = async () => {
@@ -32,7 +30,7 @@ export const ClearCache = () => {
   };
   useEffect(async () => {
     const response = await getCollectionTypes();
-    setoptions(response.data);
+    setOptions(response.data);
   }, []);
 
   const handleAlertClose = () => setShowAlert(false);
