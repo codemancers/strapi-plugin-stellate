@@ -1,15 +1,20 @@
 "use strict";
 const axios = require("axios");
+const buildConfig = require("./utils");
 
 module.exports = ({ strapi }) => ({
   async cacheService() {
     try {
+      const config = buildConfig(strapi);
+      if (!config) {
+        throw "Missing configuration";
+      }
       const data = await axios({
-        url: process.env.STELLATE_URL,
+        url: `${config.stellateUrl}`,
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "stellate-token": process.env.STELLATE_TOKEN,
+          "stellate-token": `${config.stellateToken}`,
         },
         // eslint-disable-next-line quotes
         data: { query: `mutation { _purgeAll }` },
@@ -25,12 +30,16 @@ module.exports = ({ strapi }) => ({
   },
   async refreshCollectionCache(query) {
     try {
+      const config = buildConfig(strapi);
+      if (!config) {
+        throw "Missing configuration";
+      }
       const data = await axios({
-        url: process.env.STELLATE_URL,
+        url: `${config.stellateUrl}`,
         method: "Post",
         headers: {
           "Content-Type": "application/json",
-          "stellate-token": process.env.STELLATE_TOKEN,
+          "stellate-token": `${config.stellateToken}`,
         },
         data: { query: `mutation { purge${query} }` },
       });
