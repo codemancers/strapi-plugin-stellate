@@ -1,6 +1,6 @@
 "use strict";
 const axios = require("axios");
-const buildConfig = require("./utils");
+const { buildConfig } = require("./utils");
 
 module.exports = ({ strapi }) => ({
   async cacheService() {
@@ -16,7 +16,6 @@ module.exports = ({ strapi }) => ({
           "Content-Type": "application/json",
           "stellate-token": `${config.stellateToken}`,
         },
-        // eslint-disable-next-line quotes
         data: { query: `mutation { _purgeAll }` },
       });
 
