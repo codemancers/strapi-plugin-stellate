@@ -10,11 +10,11 @@ module.exports = ({ strapi }) => ({
         throw "Missing configuration";
       }
       const data = await axios({
-        url: `${config.stellateUrl}`,
+        url: config.stellateUrl,
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "stellate-token": `${config.stellateToken}`,
+          "stellate-token": config.stellateToken,
         },
         data: { query: `mutation { _purgeAll }` },
       });
@@ -34,11 +34,11 @@ module.exports = ({ strapi }) => ({
         throw "Missing configuration";
       }
       const data = await axios({
-        url: `${config.stellateUrl}`,
+        url: config.stellateUrl,
         method: "Post",
         headers: {
           "Content-Type": "application/json",
-          "stellate-token": `${config.stellateToken}`,
+          "stellate-token": config.stellateToken,
         },
         data: { query: `mutation { purge${query} }` },
       });
