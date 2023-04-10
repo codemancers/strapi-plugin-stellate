@@ -13,7 +13,7 @@ npm install strapi-plugin-stellate
 OR
 
 ```
-yarn strapi-plugin-stellate
+yarn add strapi-plugin-stellate
 ```
 
 ## Configuration
@@ -21,14 +21,15 @@ yarn strapi-plugin-stellate
 Configure the plugin by adding the necessary lines to the `config/plugins.js` file in your Strapi application, including the Stellate API endpoint URL and authentication token.
 
 ```
+module.exports = ({ env }) => ({
 "stellate": {
     enabled: true,
-    resolve: "./src/plugins/strapi-plugin-stellate",
     config: {
       stellateToken: <STELLATE_TOKEN>,
       stellateUrl: <STELLATE_URL>,
     },
   },
+})
 ```
 
 `STELLATE_URL :` URL endpoint of the Stellate API service used to clear the cache.
@@ -39,7 +40,7 @@ Note: This information should be provided in the plugin configuration. You would
 
 ## Usage
 
-To clear the cache after running `npm run develop` or `yarn develop` in your Strapi application,go to the dropdown and select the collection type for which you want to clear the cache, then click Purge Cache, which will make an HTTP request to the designated URL endpoint with the required authentication token and clear the Strapi CMS cache.
+To clear the cache after running `npm run develop` or `yarn develop` in the Strapi application, go to the dropdown and select the collection type for which you want to clear the cache, then click Purge Cache, which will make an HTTP request to the designated URL endpoint with the required authentication token and clear the Strapi CMS cache.
 
 ![DashBoard](./docs/Dashboard.png)
 ![Selection UI](./docs/Selection.png)
