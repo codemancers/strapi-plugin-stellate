@@ -7,13 +7,13 @@ Strapi Plugin Stellate is a plugin for the Strapi headless CMS that provides a c
 To install this plugin, you can run the following command in your Strapi project:
 
 ```
-npm install strapi-plugin-stellate
+npm install @code-mancers/strapi-plugin-stellate
 ```
 
 OR
 
 ```
-yarn add strapi-plugin-stellate
+yarn add @code-mancers/strapi-plugin-stellate
 ```
 
 ## Configuration
