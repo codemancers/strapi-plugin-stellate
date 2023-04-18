@@ -1,7 +1,7 @@
 {
   "name": "@code-mancers/strapi-plugin-stellate",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Strapi Plugin Stellate is a plugin for the Strapi headless CMS that provides a convenient way to purge the cache.",
   "scripts": {
     "develop": "strapi develop",
@@ -48,5 +48,4 @@
     "stellate"
   ],
   "license": "MIT"
-  
 }
