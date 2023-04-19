@@ -23,7 +23,11 @@ export default {
         return component;
       },
       permissions: [
-        { action: "plugins::content-type-builder.read", subject: null },
+        // Uncomment to set the permissions of the plugin here
+        // {
+        //   action: '', // the action name should be plugin::plugin-name.actionType
+        //   subject: null,
+        // },
       ],
     });
     app.registerPlugin({
