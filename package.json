@@ -1,7 +1,7 @@
 {
   "name": "@code-mancers/strapi-plugin-stellate",
   "private": false,
-  "version": "1.4.2",
+  "version": "1.4.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/code-mancers/strapi-plugin-stellate"
