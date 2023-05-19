@@ -1,4 +1,5 @@
 import axios from "./axiosInstance";
+import pluginId from "../pluginId";
 
 export const refreshCache = async (type) => {
   if (type === "all") {
@@ -14,7 +15,7 @@ export const refreshCache = async (type) => {
 export const refreshAllCache = async () => {
   try {
     const response = await axios({
-      url: "stellate/cache/refresh",
+      url: `${pluginId}/cache/refresh`,
       method: "POST",
     });
 
@@ -27,7 +28,7 @@ export const refreshAllCache = async () => {
 export const refreshCollectionCache = async (collection) => {
   try {
     const response = await axios({
-      url: "stellate/cache/refreshcollection",
+      url: `${pluginId}/cache/refreshcollection`,
       method: "POST",
       data: {
         collection: collection,
@@ -43,7 +44,7 @@ export const refreshCollectionCache = async (collection) => {
 export const getCollectionTypes = async () => {
   try {
     const response = await axios({
-      url: "stellate/collections",
+      url: `${pluginId}/collections`,
       method: "GET",
     });
 
