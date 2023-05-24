@@ -15,8 +15,10 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/strapi": "4.9.0",
     "axios": "^1.3.4"
+  },
+  "peerDependencies": {
+     "@strapi/strapi": "4.9.0"
   },
   "author": {
     "name": "Syed Sibtain & Sujay Prabhu"
