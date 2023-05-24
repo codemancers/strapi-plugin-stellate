@@ -1,7 +1,7 @@
 {
   "name": "@code-mancers/strapi-plugin-stellate",
   "private": false,
-  "version": "1.5.1",
+  "version": "1.5.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/code-mancers/strapi-plugin-stellate"
@@ -18,7 +18,7 @@
     "axios": "^1.3.4"
   },
   "peerDependencies": {
-     "@strapi/strapi": "4.9.0"
+    "@strapi/strapi": "4.9.0"
   },
   "author": {
     "name": "Syed Sibtain & Sujay Prabhu"
