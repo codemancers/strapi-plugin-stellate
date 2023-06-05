@@ -30,7 +30,7 @@ export const ClearCache = () => {
   };
   useEffect(async () => {
     const response = await getCollectionTypes();
-    setOptions(response.data);
+    setOptions(["all", ...response.data]);
   }, []);
 
   const handleAlertClose = () => setShowAlert(false);
